@@ -30,18 +30,18 @@ export class CreateAccountController
 
   @Post()
   @HttpCode(201)
-  @ApiOperation({ summary: 'Inserção de livros no carrinho de compras.' })
+  @ApiOperation({ summary: 'Criação de uma conta bancária.' })
   @ApiResponse({
     status: 201,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Conta criada com sucesso.',
   })
   @ApiResponse({
     status: 400,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Campos inválidos.',
   })
   @ApiResponse({
     status: 422,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Falha na criação da conta.',
   })
   async handle(
     @Body(ValidationPipe) accountBodyDto: AccountBodyDto,

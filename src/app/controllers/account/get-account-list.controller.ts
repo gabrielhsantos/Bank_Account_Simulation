@@ -23,10 +23,11 @@ export class GetAccountListController
 
   @Get()
   @HttpCode(200)
-  @ApiOperation({ summary: 'Inserção de livros no carrinho de compras.' })
+  @ApiOperation({ summary: 'Retorno da listagem de contas bancárias.' })
   @ApiResponse({
     status: 200,
-    description: 'Carrinho de compras criado com sucesso.',
+    description:
+      'Listagem contendo o histórico de transações de cada conta. Contas canceladas, aparecem nessa lista com o active = false.',
   })
   async handle(): Promise<handleResponse> {
     try {

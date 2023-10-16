@@ -26,12 +26,12 @@ export class GetAccountController
   @ApiParam({
     name: 'id',
     type: 'number',
-    description: 'account identifier',
+    description: 'Identificador da conta.',
   })
-  @ApiOperation({ summary: 'Inserção de livros no carrinho de compras.' })
+  @ApiOperation({ summary: 'Retorno de uma conta bancária pelo identificador' })
   @ApiResponse({
     status: 200,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Listagem da conta com o histórico de transações.',
   })
   async handle(@Param() params: { id: string }): Promise<handleResponse> {
     try {
