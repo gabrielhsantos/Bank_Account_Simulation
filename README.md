@@ -72,7 +72,7 @@ $ npm run infra:down
 ```bash
 $ npm start
 ```
-# O servidor inciará na porta:3000 - acesse <http://localhost:3001> (ou a porta que foi definida no arquivo .env.development).
+O servidor inciará na porta:3000 - acesse <http://localhost:3001> (ou a porta que foi definida no arquivo .env.development).
 
 ### ⚙️ Executando os testes
 
