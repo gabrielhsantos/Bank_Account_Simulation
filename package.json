@@ -7,6 +7,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "infra:up": "docker-compose up -d",
+    "migration:generate": "sequelize-cli migration:generate --name",
+    "migration:run": "cross-env NODE_ENV=development sequelize-cli db:migrate",
+    "seed:generate": "sequelize-cli seed:generate --name",
+    "seed:run": "sequelize-cli db:seed:all",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -36,9 +40,12 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "sequelize": "^6.33.0"
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.3.0",
+    "sequelize-typescript": "^2.1.5"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.22.15",

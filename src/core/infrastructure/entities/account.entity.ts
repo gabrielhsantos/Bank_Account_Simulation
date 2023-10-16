@@ -17,6 +17,7 @@ interface AccountDtoOptionalAttributes extends Optional<AccountDto, 'id'> {}
 @Table({
   tableName: 'accounts',
   timestamps: false,
+  underscored: true,
   indexes: [
     {
       name: 'unique_type_and_number',

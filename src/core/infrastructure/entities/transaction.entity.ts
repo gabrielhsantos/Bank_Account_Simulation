@@ -18,6 +18,7 @@ interface TransactionDtoOptionalAttributes
 
 @Table({
   tableName: 'transactions',
+  underscored: true,
   timestamps: true,
 })
 export class Transaction extends Model<

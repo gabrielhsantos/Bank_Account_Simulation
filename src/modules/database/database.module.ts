@@ -20,8 +20,8 @@ import { Transaction } from '@core/infrastructure/entities/transaction.entity';
           password: databaseConfig.password,
           database: databaseConfig.database,
           storage: databaseConfig?.storage,
-          autoLoadModels: true,
-          synchronize: true,
+          autoLoadModels: false,
+          synchronize: false,
           logging: false,
           models: [Account, Transaction],
         };
