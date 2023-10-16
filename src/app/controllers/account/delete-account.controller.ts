@@ -18,19 +18,19 @@ export class DeleteAccountController implements IRequestHandler<Promise<void>> {
 
   @Delete()
   @HttpCode(204)
-  @ApiOperation({ summary: 'Inserção de livros no carrinho de compras.' })
+  @ApiOperation({ summary: 'Deleção de uma conta bancária.' })
   @ApiParam({
     name: 'id',
     type: 'number',
-    description: 'account identifier',
+    description: 'Identificador da conta.',
   })
   @ApiResponse({
     status: 204,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Conta deletada com sucesso.',
   })
   @ApiResponse({
-    status: 400,
-    description: 'Carrinho de compras criado com sucesso.',
+    status: 404,
+    description: 'Conta não localizada pelo identificador.',
   })
   async handle(@Param() params: { id: string }): Promise<void> {
     try {

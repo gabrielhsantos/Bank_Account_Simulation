@@ -11,6 +11,7 @@ import { Transaction } from '@core/infrastructure/entities/transaction.entity';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
         const databaseConfig = configService.get('db');
+        const apiConfig = configService.get('api');
 
         return {
           dialect: databaseConfig.dialect,
@@ -20,8 +21,8 @@ import { Transaction } from '@core/infrastructure/entities/transaction.entity';
           password: databaseConfig.password,
           database: databaseConfig.database,
           storage: databaseConfig?.storage,
-          autoLoadModels: false,
-          synchronize: false,
+          autoLoadModels: apiConfig.environment === 'test',
+          synchronize: apiConfig.environment === 'test',
           logging: false,
           models: [Account, Transaction],
         };

@@ -3,6 +3,7 @@ import { TEnvironmentConfig } from './types';
 export const mapEnvToConfiguration = (): TEnvironmentConfig => ({
   api: {
     port: parseInt(process.env.API_PORT!),
+    environment: process.env.NODE_ENV || 'development',
   },
   db: {
     dialect: process.env.DIALECT!,

@@ -34,23 +34,27 @@ export class CreateTransactionController
 
   @Post()
   @HttpCode(201)
-  @ApiOperation({ summary: 'Inserção de livros no carrinho de compras.' })
+  @ApiOperation({ summary: 'Transação bancária.' })
   @ApiParam({
     name: 'id',
     type: 'number',
-    description: 'account identifier',
+    description: 'identificador da conta.',
   })
   @ApiResponse({
     status: 201,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Transação realizada com sucesso.',
   })
   @ApiResponse({
     status: 400,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Campos inválidos.',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Conta não localizada pelo identificador.',
   })
   @ApiResponse({
     status: 422,
-    description: 'Carrinho de compras criado com sucesso.',
+    description: 'Falha na criação da transação.',
   })
   async handle(
     @Body(ValidationPipe) transactionBodyDto: TransactionBodyDto,
